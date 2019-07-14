@@ -28,3 +28,17 @@ exports.largestPrimeFactor = function(n) {
 
   return primeNumber;
 };
+
+largestPrimeFactor2 = function(n) {
+  let primeNumber = 0;
+
+  if (n === 1) {
+    return 1;
+  }
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0 || primeNumber < i) {
+      primeNumber = largestPrimeFactor2(i);
+    }
+  }
+};
